@@ -2,7 +2,6 @@
 <!--https://playground.musixmatch.com was very helpful-->
 
 <head>
-<<<<<<< HEAD
 <title>Music Search</title>
 <link href="lyricstyle.css?v=2.7" type="text/css" rel="stylesheet" />
   <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
@@ -15,7 +14,7 @@
         e.preventDefault();
         var artist = $("#searchBox").val();
         var myurl = "https://api.musixmatch.com/ws/1.1/track.search?format=jsonp&callback=callback";
-        myurl += "&q_artist=" + artist + "&quorum_factor=1&apikey=9009fdb370eef35310f56a881752f2c0";
+        myurl += "&q_artist=" + artist + "&s_track_rating=desc&quorum_factor=1&apikey=9009fdb370eef35310f56a881752f2c0";
         var results;
         $.ajax({
           url: myurl,
@@ -42,7 +41,7 @@
         e.preventDefault();
         var lyrics = $("#searchBox2").val();
         var myurl = "https://api.musixmatch.com/ws/1.1/track.search?format=jsonp&callback=callback";
-        myurl += "&q_lyrics=" + lyrics + "&quorum_factor=1&apikey=9009fdb370eef35310f56a881752f2c0";
+        myurl += "&q_lyrics=" + lyrics + "&s_track_rating=desc&quorum_factor=1&apikey=9009fdb370eef35310f56a881752f2c0";
         var results2;
         $.ajax({
           url: myurl,
@@ -77,9 +76,6 @@ $(document).ready(function(){
 });
   </script>
 
-=======
-<script src="jquery-3.2.1.js"></script>
->>>>>>> 335b71d53e0336ee3c8be7db211cbe648bee450c
 </head>
 
 <body>
