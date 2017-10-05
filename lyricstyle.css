@@ -1,1 +1,54 @@
-//lyricstyle
+body{
+	background-image:url("music-equalizer.svg");
+}
+
+h1{
+	font-size:80px;
+	font-family:Avantgarde, sans-serif;
+	color: white;
+}
+
+h2{
+	font-size:32px;
+	font-family:Avantgarde, sans-serif;
+	color:white;
+}
+
+
+input[type=submit]{
+	border: none;
+	background-color: mediumorchid;
+	font-size: 32px;
+	color: white;
+	font-family: "Avantgarde", Sans-Serif;
+	border-radius:2px;
+}
+
+input[type=submit]:hover{
+	background-color:DarkCyan;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+input[type=text]{
+	width: 25%;
+	border: none;
+	background-color:white;
+	font-family:Avantgarde, sans-serif;
+	font-size:32px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+	width: 50%;
+}
+
+li{
+	color:white;
+	font-family: "Avantgarde", Sans-Serif;
+
+}
+
+.buttoncolor{
+	background-color:crimson;
+}

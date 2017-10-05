@@ -1,11 +1,104 @@
-<!--Lyric.html -->
 <html>
+<!--https://playground.musixmatch.com was very helpful-->
+
 <head>
+<<<<<<< HEAD
+<title>Music Search</title>
+<link href="lyricstyle.css?v=2.7" type="text/css" rel="stylesheet" />
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+  </script>
+  <script>
+    $(document).ready(function() {
+
+
+      $("#artistButton").click(function(e) {
+        e.preventDefault();
+        var artist = $("#searchBox").val();
+        var myurl = "https://api.musixmatch.com/ws/1.1/track.search?format=jsonp&callback=callback";
+        myurl += "&q_artist=" + artist + "&quorum_factor=1&apikey=9009fdb370eef35310f56a881752f2c0";
+        var results;
+        $.ajax({
+          url: myurl,
+          dataType: "jsonp",
+          success: function(data) {
+            console.log(data);
+            results = "<ol>";
+            for (i = 0; i < 10; i++) {
+              var songs = data['message']['body']['track_list'][i]['track']['track_name'];
+
+              results += "<li>" + songs + "</li>";
+
+            }
+            results += "</ol>";
+            $('#results').html(results);
+
+
+          }
+        });
+      });
+
+
+      $("#lyricsButton").click(function(e) {
+        e.preventDefault();
+        var lyrics = $("#searchBox2").val();
+        var myurl = "https://api.musixmatch.com/ws/1.1/track.search?format=jsonp&callback=callback";
+        myurl += "&q_lyrics=" + lyrics + "&quorum_factor=1&apikey=9009fdb370eef35310f56a881752f2c0";
+        var results2;
+        $.ajax({
+          url: myurl,
+          dataType: "jsonp",
+          success: function(data) {
+            console.log(data);
+            results2 = "<ol>";
+            for (i = 0; i < 10; i++) {
+              var song = data['message']['body']['track_list'][i]['track']['track_name'];
+              var artist = data['message']['body']['track_list'][i]['track']['artist_name'];
+              var album = data['message']['body']['track_list'][i]['track']['album_name'];
+              results2 += "<li>" + artist + " - " + song + "</li>";
+
+            }
+            results2 += "</ol>";
+            $('#results2').html(results2);
+
+
+          }
+        });
+      });
+    });
+
+$(document).ready(function(){
+    $("#searchBox").focus(function(){
+        $("#artistButton").css({"background-color","crimson"});
+    });
+
+    $("#searchBox").blur(function(){
+        $("#artistButton").css({"background-color","deeporchid"});
+    });
+});
+  </script>
+
+=======
 <script src="jquery-3.2.1.js"></script>
+>>>>>>> 335b71d53e0336ee3c8be7db211cbe648bee450c
 </head>
 
 <body>
-<h1>LYRICSS</h1>
-<body>
+ <h1>Music Search</h1>
+  <div id="userInput">
+    <form>
+      <h2>Search for an Artist</h2>
+      <input type="text" id="searchBox" value=""><input id="artistButton" type="submit" value="Submit">
+    </form>
+  </div>
+  <div id="results">
+  </div>
+  <form>
+    <h2>Search lyrics</h2>
+    <input type="text" id="searchBox2" value=""><input id="lyricsButton" type="submit" value="Submit">
+  </form>
+  </div>
+  <div id="results2">
+  </div>
+</body>
 
 </html>
