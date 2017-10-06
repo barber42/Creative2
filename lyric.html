@@ -3,7 +3,7 @@
 
 <head>
 <title>Music Search</title>
-<link href="lyricstyle.css?v=2.7" type="text/css" rel="stylesheet" />
+<link href="lyricstyle.css?v=3.0" type="text/css" rel="stylesheet" />
   <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
   </script>
   <script>
@@ -67,19 +67,30 @@
 
 $(document).ready(function(){
     $("#searchBox").focus(function(){
-        $("#artistButton").css({"background-color","crimson"});
+        $("#artistButton").css({"background-color":"crimson"});
     });
 
-    $("#searchBox").blur(function(){
-        $("#artistButton").css({"background-color","deeporchid"});
+   $("#searchBox").blur(function(){
+        $("#artistButton").css({"background-color":"mediumorchid"});
     });
+
+    $("#searchBox2").focus(function(){
+        $("#lyricsButton").css({"background-color":"crimson"});
+    });
+
+    $("#searchBox2").blur(function(){
+        $("#lyricsButton").css({"background-color":"mediumorchid"});
+    });
+
+
+   
 });
   </script>
 
 </head>
 
 <body>
- <h1>Music Search</h1>
+ <h1>The Mediocre Music Search</h1>
   <div id="userInput">
     <form>
       <h2>Search for an Artist</h2>
